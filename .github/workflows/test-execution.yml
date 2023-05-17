@@ -23,7 +23,7 @@ jobs:
       env:
         CI_EXECUTION: ${{ secrets.CI_EXECUTION }}
     - name: Get Allure history
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       if: always()
       continue-on-error: true
       with:
