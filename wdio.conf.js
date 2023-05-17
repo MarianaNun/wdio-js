@@ -1,5 +1,8 @@
 import allure from 'allure-commandline';
 
+const CI_EXECUTION = process.env.CI_EXECUTION;
+const CHROME_HEADLESS_ARGS = CI_EXECUTION ? ['--headless', '--no-sandbox', '--window-size=1920,1080','--start-maximized']: [];
+
 exports.config = {
   //
   // ====================
@@ -56,6 +59,9 @@ exports.config = {
   capabilities: [
    {
      browserName: 'chrome',
+     'goog:chromeOptions': {
+       args: CHROME_HEADLESS_ARGS,
+     },
    },
   ],
   //
