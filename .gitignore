@@ -1,0 +1,10 @@
+# Dependency directories
+node_modules/
+
+
+# tests
+result.txt
+
+# Allure report
+allure-report
+allure-results
