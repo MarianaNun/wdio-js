@@ -1,0 +1,1 @@
+{"b48a1e36389bf8a177d2d429591c0f02":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"afb8d22eed11466b","reportUrl":"https://MarianaNun.github.io/wdio-js/14//#testresult/afb8d22eed11466b","status":"passed","time":{"start":1684325362592,"stop":1684325413580,"duration":50988}}]}}
