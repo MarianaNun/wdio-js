@@ -22,12 +22,13 @@ class ResultsPage extends Page {
     async getResultsData (pages) {
         let data= [];
         await this.breadCrumb.waitForDisplayed();
+        data.push(['Item name', 'Price', 'URL']);
         for (let page = 1; page <= pages; page += 1) {
             for (let index = 0; index < (await this.resultItemTitle).length ; index += 1) {
                 const title = await this.resultItemTitle[index].getText();
                 const url = await this.resultItemTitle[index].getAttribute('href');
                 const price = await this.resultItemPrice[index].getText();
-                data.push([title, url, price.replace('\n', '')]);
+                data.push([title, price.replace('\n', ''), url]);
             }
             await this.nextPageButton.scrollIntoView({ block: 'center' });
             await this.nextPageButton.click();
