@@ -292,7 +292,6 @@ exports.config = {
   onComplete: function() {
    const reportError = new Error('Could not generate Allure report');
    const generation = allure(['generate', 'allure-results', '--clean']);
-   const open = allure(['serve']);
    return new Promise((resolve, reject) => {
      const generationTimeout = setTimeout(
        () => reject(reportError), 5000,
@@ -302,9 +301,12 @@ exports.config = {
        if (exitCode !== 0) {
          reject(reportError);
        }
-       open.on('exit', function () {
-         //
-       });
+       if ( !CI_EXECUTION ) { 
+         const open = allure(['serve']);
+         open.on('exit', function () {
+            //
+         });
+      }
        resolve();
      });
    });
