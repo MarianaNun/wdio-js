@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu May 18 11:17:03 GMT 2023","Thu May 18 11:17:44 GMT 2023","40775","","Get search data","","","","should get data from a search",""
